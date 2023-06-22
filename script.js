@@ -1,27 +1,149 @@
 // Assignment code here
-window.alert("Welcome to the random password generator")
- //window.prompt("How many characters would you like your password to have?");
 
- const aNumber = Number(window.prompt("How many characters would you like your password to have? (Type a number)" , ""));
+var specialCharacters = [
+  '@',
+  '%',
+  '+',
+  '\\',
+  '/',
+  "'",
+  '!',
+  '#',
+  '$',
+  '^',
+  '?',
+  ':',
+  ',',
+  ')',
+  '(',
+  '}',
+  '{',
+  ']',
+  '[',
+  '~',
+  '-',
+  '_',
+  '.',
+];
 
- (window.confirm("Would you like to add numbers?"))
+// Array of numeric characters to be included in password
+var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-(window.confirm("would you like to add special characters?"))
+// Array of lowercase characters to be included in password
+var lowerLetters = [
+  'a',
+  'b',
+  'c',
+  'd',
+  'e',
+  'f',
+  'g',
+  'h',
+  'i',
+  'j',
+  'k',
+  'l',
+  'm',
+  'n',
+  'o',
+  'p',
+  'q',
+  'r',
+  's',
+  't',
+  'u',
+  'v',
+  'w',
+  'x',
+  'y',
+  'z',
+];
 
- 
-
+// Array of uppercase characters to be included in password
+var upperLetters = [
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'H',
+  'I',
+  'J',
+  'K',
+  'L',
+  'M',
+  'N',
+  'O',
+  'P',
+  'Q',
+  'R',
+  'S',
+  'T',
+  'U',
+  'V',
+  'W',
+  'X',
+  'Y',
+  'Z',
+];
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+
+
 // Write password to the #password input
 function writePassword() {
-  var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var randomNumber = Math.floor(Math.random() * chars.length);
-  //var password = generatePassword();
- // var passwordText = document.querySelector("#password");
+  var finalChar = [];
+  var possibleChar = [];
+  var pwd = [];
+  const aNumber = parseInt(window.prompt("How many characters would you like your password to have? (Type a number"));
 
-  passwordText.value = password;
+  if(aNumber < 8 || aNumber > 128)
+  {
+    alert("Please select a password length between 8 and 128 characters");
+    return null;
+  }
+
+  if(Number.isNaN(aNumber)) {
+    alert("Please enter a valid number");
+    return null;
+  }
+
+
+ const numConfirm = window.confirm("Would you like to add numbers?");
+
+const specialConfirm = window.confirm("would you like to add special characters?");
+
+const lowerConfirm = window.confirm("Would you like to add lower case letters?");
+
+const upperConfirm = window.confirm("Would you like to add upper case letters?");
+
+if(numConfirm === false && specialConfirm === false && lowerConfirm === false && upperConfirm === fasle)
+{
+  alert("No");
+  return null;
+}
+
+if(numConfirm)
+{
+  possibleChar = possibleChar.concat(numbers);
+  console.log("Possible Char Arr: ", possibleChar);
+  finalChar.push(numbers[Math.floor(Math.random() * numbers.length)]);
+  console.log("Final Char Arr:", finalChar);
+}
+
+if(specialConfirm)
+{
+  possibleChar = possibleChar.concat(specialCharacters);
+  console.log("Possible Char Arr: ", possibleChar);
+  finalChar.push(specialCharacters[Math.floor(Math.random() * specialCharacters.length)]);
+  console.log("Final Char Arr:", finalChar);
+}
+
+ // passwordText.value = password;
 
 }
 
