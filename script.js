@@ -164,17 +164,25 @@ passwordText.value = password;
 
 }
 
-function generatePassword() {
+//function generatePassword() {
 
-  let finalResult = [];
+ // let finalResult = [];
 
-  let userOption = getPasswordOptions();
+  //let userOption = getPasswordOptions();
 
-  let getPass = [];
-}
+ // let getPass = [];
+//}
 
 
 // Add event listener to generate button
+var generateBtn = documetn.quertSelector('#generate');
+
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector('#password');
+  passwordText.value = password;
+  }
+
 generateBtn.addEventListener("click", writePassword);
 
 
