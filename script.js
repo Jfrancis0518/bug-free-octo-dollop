@@ -163,16 +163,19 @@ if(upperConfirm)
 passwordText.value = password;
 
 }
+
+function generatePassword() {
+
+  let finalResult = [];
+
+  let userOption = getPasswordOptions();
+
+  let getPass = [];
+}
+
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-//const button = document.getElementById('generate');
-
-  button?.addEventListener('click', function handleClick(event){
-  console.log('button clicked');
-  console.log(event);
-  console.log(event.target);
-});
 
 
 //math
