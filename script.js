@@ -141,6 +141,23 @@ if(specialConfirm)
   console.log("Possible Char Arr: ", possibleChar);
   finalChar.push(specialCharacters[Math.floor(Math.random() * specialCharacters.length)]);
   console.log("Final Char Arr:", finalChar);
+
+}
+
+if(lowerConfirm)
+{
+  possibleChar = possibleChar.concat(numbers);
+  console.log("Possible Char Arr: ", possibleChar);
+  finalChar.push(numbers[Math.floor(Math.random() * numbers.length)]);
+  console.log("Final Char Arr:", finalChar);
+}
+
+if(upperConfirm)
+{
+  possibleChar = possibleChar.concat(specialCharacters);
+  console.log("Possible Char Arr: ", possibleChar);
+  finalChar.push(specialCharacters[Math.floor(Math.random() * specialCharacters.length)]);
+  console.log("Final Char Arr:", finalChar);
 }
 
  // passwordText.value = password;
