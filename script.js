@@ -163,17 +163,17 @@ if(upperConfirm)
 passwordText.value = password;
 
 }
-
-<script>
-  const element = document.getElementById("generate");
-  element.addEventListener("click", myFunction);
-  
-  function myFunction () {
-    document.getElementById("generate").innerHTML = passwordText.value = password;
-  }
-</script>
 // Add event listener to generate button
-//generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);
+
+//const button = document.getElementById('generate');
+
+  button?.addEventListener('click', function handleClick(event){
+  console.log('button clicked');
+  console.log(event);
+  console.log(event.target);
+});
+
 
 //math
 //Math.floor() returns the largest integer less than or equal to x
