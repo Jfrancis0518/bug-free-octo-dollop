@@ -178,6 +178,8 @@ let userOption = getPasswordOptions();
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+passwordText.value = password;
+
 //return randomPasswordGenerated;
 
 
