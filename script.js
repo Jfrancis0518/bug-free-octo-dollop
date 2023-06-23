@@ -100,7 +100,7 @@ function writePassword() {
   var finalChar = [];
   var possibleChar = [];
   var pwd = [];
-  const aNumber = parseInt(window.prompt("How many characters would you like your password to have? (Type a number"));
+  const aNumber = parseInt(window.prompt("How many characters would you like your password to have?  (Type a number between 8 & 128"));
 
   if(aNumber < 8 || aNumber > 128)
   {
@@ -173,6 +173,8 @@ if(numConfirm === true && specialConfirm === true && lowerConfirm === true && up
 function generatePassword() {
 
 let finalResult = [];
+
+console.log(finalChar.join())
 
 let userOption = getPasswordOptions();
 
