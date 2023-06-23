@@ -95,6 +95,7 @@ var generateBtn = document.querySelector("#generate");
 
 
 // Write password to the #password input
+
 function writePassword() {
   var finalChar = [];
   var possibleChar = [];
@@ -171,13 +172,11 @@ if(numConfirm === true && specialConfirm === true && lowerConfirm === true && up
 
 function generatePassword() {
 
-let finalResult = [numConfirm * specialConfirm * lowerConfirm * upperConfirm];
+let finalResult = [];
 
 let userOption = getPasswordOptions();
 
-  let getPass = [''];
-  
-  finalResult = finalChar.join;
+  let getPass = [];
 
   passwordText.value = password;
 }
@@ -185,7 +184,14 @@ let userOption = getPasswordOptions();
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-//return  randomPasswordGenerated;
+
+
+
+//return generatePassword;
+
+
+ //finalResult = finalChar.join
+
 
 
 //math: tryig to figure out which code it the correct one to use 
