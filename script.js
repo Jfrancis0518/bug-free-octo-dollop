@@ -167,24 +167,25 @@ if(numConfirm === true && specialConfirm === true && lowerConfirm === true && up
   //return null;
 }
 
-
-//passwordText.value = password;
-
 }
 
 function generatePassword() {
 
-let finalResult = [];
+let finalResult = [numConfirm * specialConfirm * lowerConfirm * upperConfirm];
 
 let userOption = getPasswordOptions();
 
-  let getPass = [];
+  let getPass = [''];
+  
+  finalResult = finalChar.join;
+
+  passwordText.value = password;
 }
 
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-//return randomPasswordGenerated;
+//return  randomPasswordGenerated;
 
 
 //math: tryig to figure out which code it the correct one to use 
