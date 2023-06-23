@@ -160,6 +160,13 @@ if(upperConfirm)
   console.log("Final Char Arr:", finalChar);
 }
 
+if(numConfirm === true && specialConfirm === true && lowerConfirm === true && upperConfirm === true)
+{
+  alert("Please copy your password");
+  //return randomPasswordGenerated;
+  //return null;
+}
+
 
 //passwordText.value = password;
 
@@ -177,13 +184,10 @@ let userOption = getPasswordOptions();
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-passwordText.value = password;
-
 //return randomPasswordGenerated;
 
 
-//math
+//math: tryig to figure out which code it the correct one to use 
 //Math.floor() returns the largest integer less than or equal to x
 //Math.max() returns the largest of zero or more numnbers
 //Math.min() returns the smallest of zero or more numbers
