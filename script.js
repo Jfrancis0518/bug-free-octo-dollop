@@ -99,7 +99,7 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var finalChar = [];
   var possibleChar = [];
-  var pwd = [];
+  var pwd = finalChar.join ('');
   const aNumber = parseInt(window.prompt("How many characters would you like your password to have?  (Type a number between 8 & 128"));
 
   if(aNumber < 8 || aNumber > 128)
@@ -170,17 +170,23 @@ if(numConfirm === true && specialConfirm === true && lowerConfirm === true && up
 
 }
 
+//return pwd password not generating 
+
 function generatePassword() {
+const password = writePassword()
 
-let finalResult = [];
+document.getElementById('output').innerHTML = password
 
-console.log(finalChar.join())
 
-let userOption = getPasswordOptions();
+//let finalResult = [];
 
-  let getPass = [];
+//console.log(finalChar.join())
 
-  passwordText.value = password;
+//let userOption = getPasswordOptions();
+
+ // let getPass = [];
+
+ // passwordText.value = password;
 }
 
 
