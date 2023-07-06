@@ -22,7 +22,7 @@ let generatePassword = function() {
   if (characterAmount >= 8 && characterAmount < 129) {
 
     // ask if user wants to include integers
-    let getInteger = window.confirm("Would you like to include NUMBERS?");
+    let getInteger = window.confirm("Would you like to include Numbers?");
 
     // if user wants to include numbers
     if (getInteger) {
@@ -31,7 +31,7 @@ let generatePassword = function() {
     };
 
     // ask if user wants to include special characters
-    let getSpecialCharacters = window.confirm("Would you like to include SPECIAL characters?");
+    let getSpecialCharacters = window.confirm("Would you like to include special characters?");
 
     // if user wants to include special characters 
     if (getSpecialCharacters) {
@@ -40,7 +40,7 @@ let generatePassword = function() {
     };
 
     // ask if user wants to include lowercase characters
-    let getLowerCase = window.confirm("Would you like to include LOWERCASE characters?");
+    let getLowerCase = window.confirm("Would you like to include lowercase characters?");
 
     // if user wants to include lowercase characters
     if (getLowerCase) {
