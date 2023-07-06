@@ -49,7 +49,7 @@ let generatePassword = function() {
     };
 
     // ask if user wants to include uppercase characters
-    let getUpperCase = window.confirm("Would you like to include UPPERCASE characters?");
+    let getUpperCase = window.confirm("Would you like to include Uppercase characters?");
 
     // if user wants to include uppercase characters
     if (getUpperCase) {
