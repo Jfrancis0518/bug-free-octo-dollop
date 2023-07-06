@@ -27,7 +27,7 @@ function writePassword() {
 
 // Write password to the #password input
 
-function writePassword() {
+function generatePassword() {
   var finalChar = [];
   var possibleChar = [];
   var pwd = finalChar.join ('');
