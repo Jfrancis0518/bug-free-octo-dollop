@@ -7,9 +7,22 @@ var upperCase;
 var lowerCase;
 var selection;
 var lettersUp
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
 
+const characters = ["number", "letters", "character"];
+
+number = "0123456789";
+letters = "abcdefghijklmnopqrstuvwxyz";
+lettersUp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+character = "!@#$%^&*)()";
+
+
+// Get references to the #generate element
+//var generateBtn = document.querySelector("#generate");
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
 
 
 // Write password to the #password input
