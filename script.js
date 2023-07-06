@@ -1,147 +1,89 @@
-// Assignment code here
+const passwordOptions = {
+  num: "1234567890",
+  specialChar: "!@#$%&'()*+,^-./:;<=>?[]_`{~}|",
+  lowerCase: "abcdefghijklmnopqrstuvwxyz",
+  upperCase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+};
 
-var length;
-var number;
-var specialCharacter;
-var upperCase;
-var lowerCase;
-var selection;
-var lettersUp
+document.getElementById('generate').addEventListener('click', function() {
+  alert(generatePassword());
+});
 
-const characters = ["number", "letters", "character"];
+// Executes when button is clicked
+let generatePassword = function() {
 
-number = "0123456789";
-letters = "abcdefghijklmnopqrstuvwxyz";
-lettersUp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-character = "!@#$%^&*)()";
+  // initial state for password information
+  let passInfo = "";
 
+  // ask user for the length of their password
+  let characterAmount = window.prompt("Enter the amount of characters you want for your password. NOTE: Must be between 8-128 characters");
 
-// Get references to the #generate element
-//var generateBtn = document.querySelector("#generate");
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  passwordText.value = password;
-}
+  // If the character length doesn't match requirements, alert the user
+  if (characterAmount >= 8 && characterAmount < 129) {
 
+    // ask if user wants to include integers
+    let getInteger = window.confirm("Would you like to include NUMBERS?");
 
-// Write password to the #password input
+    // if user wants to include numbers
+    if (getInteger) {
+      // add numerical characters to password data 
+      passInfo = passInfo + passwordOptions.num;
+    };
 
-function generatePassword() {
-  var finalChar = [];
-  var possibleChar = [];
-  var pwd = finalChar.join ('');
-  const aNumber = parseInt(window.prompt("How many characters would you like your password to have?  (Type a number between 8 & 128"));
+    // ask if user wants to include special characters
+    let getSpecialCharacters = window.confirm("Would you like to include SPECIAL characters?");
 
-  if(aNumber < 8 || aNumber > 128)
-  {
-    alert("Please select a password length between 8 and 128 characters");
-    return null;
+    // if user wants to include special characters 
+    if (getSpecialCharacters) {
+      // add special characters to password data
+      passInfo = passInfo + passwordOptions.specialChar;
+    };
+
+    // ask if user wants to include lowercase characters
+    let getLowerCase = window.confirm("Would you like to include LOWERCASE characters?");
+
+    // if user wants to include lowercase characters
+    if (getLowerCase) {
+      // add lowercase characters to password data
+      passInfo = passInfo + passwordOptions.lowerCase;
+    };
+
+    // ask if user wants to include uppercase characters
+    let getUpperCase = window.confirm("Would you like to include UPPERCASE characters?");
+
+    // if user wants to include uppercase characters
+    if (getUpperCase) {
+      // add uppercase characters to password data 
+      passInfo = passInfo + passwordOptions.upperCase;
+    };
+
+    // ensure user chooses at least one option
+    if (getInteger !=true && getSpecialCharacters !=true && getLowerCase !=true && getUpperCase !=true) {
+      // notify user needs to select at least one option
+      window.alert("You need to select at least one option, please try again!");
+      // return user back to their questions
+      return generatePassword();
+    };
+
+    // randomPassword is an empty string that the for loop will pass information in
+    let randomPassword = "";
+
+    // for loop grabs characterAmount to use
+    for (let i = 0; i < characterAmount; i++) {
+      //passInfo connects to charAt that uses both Math.floor and random to take the length of passInfo and randomize the results
+      randomPassword += passInfo[Math.floor(Math.random() * passInfo.length)];
+    };
+
+    // return password results
+    return randomPassword;
   }
-
-  if(Number.isNaN(aNumber)) {
-    alert("Please enter a valid number");
-    return null;
+  // if user's response is invalid
+  else {
+    // alert user
+    window.alert("You need to provide a valid length!");
+    // return user back to their questions
+    
+    /* Removed for testing purposes to break the endless loop. */
+    // return generatePassword();
   }
-
-
- const numConfirm = window.confirm("Would you like to add numbers?");
-
-const specialConfirm = window.confirm("would you like to add special characters?");
-
-const lowerConfirm = window.confirm("Would you like to add lower case letters?");
-
-const upperConfirm = window.confirm("Would you like to add upper case letters?");
-
-if(numConfirm === false && specialConfirm === false && lowerConfirm === false && upperConfirm === fasle)
-{
-  alert("No");
-  return null;
-}
-
-if(numConfirm)
-{
-  possibleChar = possibleChar.concat(numbers);
-  console.log("Possible Char Arr: ", possibleChar);
-  finalChar.push(numbers[Math.floor(Math.random() * numbers.length)]);
-  console.log("Final Char Arr:", finalChar);
-}
-
-if(specialConfirm)
-{
-  possibleChar = possibleChar.concat(specialCharacters);
-  console.log("Possible Char Arr: ", possibleChar);
-  finalChar.push(specialCharacters[Math.floor(Math.random() * specialCharacters.length)]);
-  console.log("Final Char Arr:", finalChar);
-
-}
-
-if(lowerConfirm)
-{
-  possibleChar = possibleChar.concat(numbers);
-  console.log("Possible Char Arr: ", possibleChar);
-  finalChar.push(numbers[Math.floor(Math.random() * numbers.length)]);
-  console.log("Final Char Arr:", finalChar);
-}
-
-if(upperConfirm)
-{
-  possibleChar = possibleChar.concat(specialCharacters);
-  console.log("Possible Char Arr: ", possibleChar);
-  finalChar.push(specialCharacters[Math.floor(Math.random() * specialCharacters.length)]);
-  console.log("Final Char Arr:", finalChar);
-}
-
-if(numConfirm === true && specialConfirm === true && lowerConfirm === true && upperConfirm === true)
-{
-  alert("Please copy your password");
-  //return randomPasswordGenerated;
-  //return null;
-}
-
-}
-
-//return pwd password not generating 
-
-function generatePassword() {
-const password = writePassword()
-
-document.getElementById('output').innerHTML = password
-
-
-//let finalResult = [];
-
-//console.log(finalChar.join())
-
-//let userOption = getPasswordOptions();
-
- // let getPass = [];
-
- // passwordText.value = password;
-}
-
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-
-
-//return generatePassword;
-
-
- //finalResult = finalChar.join
-
-
-
-//math: tryig to figure out which code it the correct one to use 
-//Math.floor() returns the largest integer less than or equal to x
-//Math.max() returns the largest of zero or more numnbers
-//Math.min() returns the smallest of zero or more numbers
-//Math.random() returns a pseudo-random number between 0 and 1
-
-//Window
-// window alert() instructs the browser to display a dialog w/ optional message
-//window.prompt() instructs the browser to display a dialog with an optional message prompting the user to input some text, and to wait until the user either submits the text or cancels the dialog.
-
-
-//prompt > alert > confirm
+};
